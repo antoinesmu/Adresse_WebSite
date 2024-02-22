@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AdresseHEI</title>
+    <link href="css/theme.css" rel="stylesheet">
+    <meta charset="UTF-8-general-ci">
+</head>
+<body>
+<div class="container">
+    <script src="js/signin.js" type="application/javascript"></script>
+    <div class="title"> Créer son compte</div>
+    <div class="user-details">
+        <span class="details">
+            <p class="error" th:text="${error}">Erreur ici</p>
+        </span>
+    </div>
+    <form method="post" class="main" id="signinForm">
+        <div class="column">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details"> Identifiant </span>
+                    <input type="text" id="login" name="login" placeholder="Saisir votre login" required>
+                </div>
+            </div>
+
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details"> Mot de passe  </span>
+                    <input type="password" id="password" name="password" placeholder="Saisir votre mot de passe"
+                           required>
+                </div>
+            </div>
+
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details"> Confirmez votre mot de passe  </span>
+                    <input type="password" id="passwordVerif" name="passwordVerif"
+                           placeholder="Confirmez votre mot de passe" required>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details"> Prénom </span>
+                    <input type="text" id="firstName" name="firstName" placeholder="Saisir votre prénom" required>
+                </div>
+            </div>
+
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details"> Nom </span>
+                    <input type="text" id="lastName" name="lastName" placeholder="Saisir votre nom" required>
+                </div>
+            </div>
+
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details"> Adresse e-mail </span>
+                    <input type="email" id="email" name="email" placeholder="Saisir votre date de mail" required>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div class="button">
+        <button id="valider" type="submit"> Valider</button>
+    </div>
+</div>
+</body>
+</html>

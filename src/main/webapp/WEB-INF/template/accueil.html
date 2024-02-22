@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <link href="css/theme.css" rel="stylesheet">
+    <meta charset="UTF8_general_ci">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_accueil.css">
+    <script src="js/accueil.js" type="application/javascript"></script>
+    <title>AdresseHEI</title>
+</head>
+<body>
+<header th:replace="~{fragments::menu('liste')}"></header>
+<main>
+    <div id="carousel">
+        <div class="hideLeft">
+            <img th:src="${'images/'+image2}">
+            <a class="lien" th:href="${'detail?id='+id2}">
+                <h3 th:text="${nom2}"></h3>
+            </a>
+        </div>
+
+        <div class="prevLeftSecond">
+            <img th:src="${'images/'+image2}">
+            <a class="lien" th:href="${'detail?id='+id2}">
+                <h3 th:text="${nom2}"></h3>
+            </a>
+        </div>
+
+        <div class="prev">
+            <img th:src="${'images/'+image3}">
+            <a class="lien" th:href="${'detail?id='+id3}">
+                <h3 th:text="${nom3}"></h3>
+            </a>
+        </div>
+
+        <div class="selected">
+            <img th:src="${'images/'+image4}">
+            <a class="lien" th:href="${'detail?id='+id4}">
+                <h3 th:text="${nom4}"></h3>
+            </a>
+        </div>
+
+        <div class="next">
+            <img th:src="${'images/'+image5}">
+            <a class="lien" th:href="${'detail?id='+id5}">
+                <h3 th:text="${nom5}"></h3>
+            </a>
+        </div>
+
+        <div class="nextRightSecond">
+            <img th:src="${'images/'+image6}">
+            <a class="lien" th:href="${'detail?id='+id6}">
+                <h3 th:text="${nom6}"></h3>
+            </a>
+        </div>
+
+        <div class="hideRight">
+            <img th:src="${'images/'+image7}">
+            <a class="lien" th:href="${'detail?id='+id7}">
+                <h3 th:text="${nom7}"></h3>
+            </a>
+        </div>
+    </div>
+
+
+</main>
+
+<footer th:replace="~{fragments::footer('accueil')}"></footer>
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AdresseHEI</title>
+    <link href="../css/theme.css" rel="stylesheet">
+    <meta charset="UTF8_general_ci">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<script src="../js/checkInputsRestaurant.js" type="application/javascript"></script>
+<header th:replace="~{fragments::menu_admin}"></header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="title">Modifier un restaurant</h3>
+            <p class="legende">Merci de remplir le formulaire</p>
+            <form method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Nom du restaurant </span>
+                        <input type="text" name="name" id="name" th:placeholder="${establishment.name}"
+                               th:value="${establishment.name}">
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Specialite </span>
+                        <input type="text" name="specialty" id="specialty" th:placeholder="${establishment.specialty}"
+                               th:value="${establishment.specialty}">
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Adresse </span>
+                        <input type="text" name="address" id="address" th:placeholder="${establishment.address}"
+                               th:value="${establishment.address}">
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Numero de telephone </span>
+                        <input type="number" name="phone" id="phone" th:placeholder="${establishment.phone}"
+                               th:value="${establishment.phone}">
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Site internet </span>
+                        <input type="url" name="website" id="website" th:placeholder="${establishment.website}"
+                               th:value="${establishment.website}">
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Prix </span>
+                        <input type="number" name="price" id="price" th:placeholder="${establishment.price}"
+                               th:value="${establishment.price}">
+                        <span class="details">Euros</span>
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Informations supplementaires </span>
+                        <textarea rows="5" name="moreInfo" id="moreInfo" th:placeholder="${establishment.moreInfo}"
+                                  th:text="${establishment.moreInfo}"></textarea>
+                    </div>
+                </div>
+                <div>
+                    <div class="button">
+                        <input type="submit" value="Enregistrer">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

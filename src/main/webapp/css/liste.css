@@ -1,0 +1,33 @@
+table {
+    text-align: left;
+}
+
+table td {
+    border-top: 0.1em solid lightgrey;
+    width: 30%;
+    padding: 0.8em 0em 0.8em 0.4em;
+}
+
+table th {
+    width: 65%;
+    color: grey;
+    padding: 0.3em;
+    margin-right: 2em;
+    border-top: 0.1em solid lightgrey;
+}
+
+table .sans_border th {
+    border-top: none;
+}
+
+table .id {
+    width: 2%;
+}
+
+table .type {
+    width: 10%;
+}
+
+table .name, table .adress, table .style, table .infos, table .login, table .firstName, table .lastName, table .email, table .privilege {
+    width: 22%;
+}

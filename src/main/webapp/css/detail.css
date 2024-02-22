@@ -1,0 +1,63 @@
+p {
+    margin-bottom: 0.5em;
+    border-bottom: 0.05em solid lightgrey;
+    height: 1.5em;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.main:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.carte-container {
+    margin-left: 20px;
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 1.5em;
+}
+
+img.img-detail {
+    margin: 0 10% 0 10%;
+    width: 15em;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+iframe {
+    width: 440%;
+}
+
+section.cards {
+    position: relative;
+}
+
+button.deleteButton {
+    padding: 0.5em 0 0.5em 0;
+}
+
+.button a:link, .button a:hover, .button a:visited {
+    color: #ffffff;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+
+div.columnTiers {
+    float: left;
+    width: 33.33%;
+}
+
+div.displayLeft {
+    direction: rtl;
+    display: flex;
+}
+
+.stars img {
+    width: 20%;
+}

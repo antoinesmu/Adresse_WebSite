@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AdresseHEI</title>
+    <link href="css/theme.css" rel="stylesheet">
+    <meta charset="UTF-8-general-ci">
+</head>
+<body>
+<div class="container">
+    <div class="title"> Connexion</div>
+    <div class="user-details">
+        <span class="details">
+            <p class="error" th:text="${error}">Erreur ici</p>
+        </span>
+    </div>
+    <form method="post">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details"> Identifiant </span>
+                <input id="login" name="login" type="text" placeholder="Saisir votre login" required>
+            </div>
+        </div>
+
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details"> Mot de passe </span>
+                <input id="password" name="password" type="password" placeholder="Saisir votre password" required>
+            </div>
+        </div>
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">
+                    <a href="signin"> S'inscrire </a>
+                </span>
+            </div>
+        </div>
+        <div class="button">
+            <input type="submit" value="valider">
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+DataBase:
+Refaire DB avec 3 tables avec ces colones (reprendre les bons noms):
+
+users:
+    private Integer id;
+    private String login;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private Boolean adminPrivilege;
+
+restaurants:
+    private Integer id;
+    private String name;
+    private String specialty;
+    private String address;
+    private String phone;
+    private String website;
+    private Integer price;
+    private String moreInfos;
+    private Integer countReview;
+
+bars:
+    private Integer id;
+    private String name;
+    private String address;
+    private String phone;
+    private String website;
+    private Integer price;
+    private String moreInfo;
+    private Integer countReview;
+    private Double averageReview;
+
+Users:
+    List<Users> listUsers();
+    Users getUser(Integer id);
+    Users addUser(Users user);
+
+Establishments:
+    List<Establishments> listEstablishments();
+    Establishments getEstablishmentById(Integer id);
+    Establishments top10Establishment();
+

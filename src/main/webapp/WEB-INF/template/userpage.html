@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AdresseHEI</title>
+    <meta charset="UTF-8-general-ci">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+
+<body>
+<header th:replace="~{fragments::menu_admin}"></header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="title">Espace personnel</h3>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle logoUser"
+                 viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd"
+                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+
+            <div class="main">
+                <div class="column">
+                    <p class="left_size"> Login </p>
+                    <p class="left_size"> Prénom </p>
+                    <p class="left_size"> Nom </p>
+                    <p class="left_size"> Mail </p>
+                    <p class="left_size" th:if="${userList.adminPrivilege}"> Administrateur </p>
+                </div>
+
+                <div class="column">
+                    <p class="right_size" th:text="${userList.login}"> admin</p>
+                    <p class="right_size" th:text="${userList.firstName}"> Antoine</p>
+                    <p class="right_size" th:text="${userList.lastName}">Simoneau</p>
+                    <p class="right_size" th:text="${userList.email}">antoinesmu@gmail.com</p>
+                    <p class="right_size" th:if="${userList.adminPrivilege}">Oui</p>
+                </div>
+            </div>
+
+            <div class="row_line">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <a class="btn btn-default" href="../liste"> Retour à la liste</a>
+                </div>
+
+                <button class="click">
+                    <a href="../deconnexion" id="deconnexion" class="deconnexion"> Déconnexion </a>
+                </button>
+
+                <div>
+                    <button id="buttonChangePassword">Changer de mot de passe</button>
+                </div>
+                <script src="../js/changePass.js" type="application/javascript"></script>
+                <div id="changePassword" class="row" hidden="true">
+                    <div class="col-md-8">
+                        <h3 class="title">Espace changement de mot de passe</h3>
+                        <p class="legende">Veuillez remplir le formulaire</p>
+                        <form id="changePasswordForm" name="changePass" method="post">
+                            <div class="user-details">
+                                <div class="input-box">
+                                    <div>
+                                        <span class="details"> Saisir votre ancien mot de passe </span>
+                                        <input type="password" name="oldPassword" id="oldPassword"
+                                               placeholder="Saisir votre ancien mot de passe">
+                                    </div>
+                                </div>
+                                <div class="input-box">
+                                    <div>
+                                        <span class="details"> Saisir votre nouveau mot de passe </span>
+                                        <input type="password" name="newPassword" id="newPassword"
+                                               placeholder="Saisir votre nouveau mot de passe">
+                                    </div>
+                                </div>
+                                <div class="input-box">
+                                    <div>
+                                        <span class="details"> Confirmer votre nouveau mot de passe </span>
+                                        <input type="password" name="verifyPassword" id="verifyPassword"
+                                               placeholder="Confirmer votre nouveau mot de passe">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button">
+                                <input type="submit" id="changePassValidBtn" value="Enregistrer"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

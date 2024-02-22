@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AdresseHEI</title>
+    <link href="css/liste.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <meta charset="UTF8_general_ci">
+</head>
+<body>
+<header th:replace="~{fragments::menu('search')}"></header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="title">Résultats de la recherche</h3>
+            <p class="legende" th:text="${sizeList}">0 résultat trouvé</p>
+            <table class="table table-hover">
+                <thead>
+                <tr class="sans_border">
+                    <th class="name">Nom</th>
+                    <th class="style">Style</th>
+                    <th class="adress">Adresse</th>
+                    <th class="infos">Description</th>
+                    <th class="link"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="establishment : ${resultList}">
+                    <td class="name" th:text="${establishment.name}">Au Vieux de la Vieille</td>
+                    <td class="style" th:text="${establishment.specialty}">Spécialités du Nord</td>
+                    <td class="adress" th:text="${establishment.address}">2 rue des Vieux Murs<br/>59000 Lille</td>
+                    <td class="infos" th:text="${establishment.moreInfo}">Spécialités du Nord</td>
+                    <td class="link">
+                        <a th:href="${'detail?id='+establishment.id+'&type=Restaurant'}"
+                           th:title="${'Details for '+establishment.name}">En savoir plus</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<footer th:replace="~{fragments::footer('search')}"></footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AdresseHEI</title>
+    <link href="../css/liste.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">
+    <meta charset="UTF-8-general-ci">
+</head>
+<body>
+<header th:replace="~{fragments::menu_admin}"></header>
+<div class="container">
+    <script src="../js/usersJS.js" type="application/javascript"></script>
+    <script src="../js/users.js" type="application/javascript"></script>
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="title">Utilisateurs</h3>
+            <table class="table table-hover">
+                <thead>
+                <tr class="sans_border">
+                    <th class="login">Login</th>
+                    <th class="lastName">Last Name</th>
+                    <th class="firstName">First Name</th>
+                    <th class="email">Email</th>
+                    <th class="privilege">Administrateur</th>
+                    <th class="delete">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${userList}">
+                    <td class="login" th:text="${user.login}">defaultLogin</td>
+                    <td class="lastName" th:text="${user.lastName}">defaultLastName</td>
+                    <td class="firstName" th:text="${user.firstName}">defaultFirstName</td>
+                    <td class="email" th:text="${user.email}">defaultEmail</td>
+                    <td class="privilege">
+                        <form method="post" id="privilegeChangeForm">
+                            <label class="switch">
+                                <input th:if="${currentUserLogin != user.login}" class="switch_id" type="checkbox"
+                                       th:checked="${user.adminPrivilege}" th:id="${user.id}"
+                                       onclick="updateStatus(this.id)"/>
+                                <span th:if="${currentUserLogin != user.login}" class="slider"></span>
+                            </label>
+                        </form>
+                    </td>
+                    <td class="delete">
+                        <form method="post">
+                            <div class="button">
+                                <input class="button" type="button" th:id="${user.id}" value="X"
+                                       onclick="deleteUser(this.id)"/>
+                            </div>
+                        </form>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

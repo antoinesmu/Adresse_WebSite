@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+body {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #fcdabe;
+}
+
+header {
+    margin: 0;
+    width: 100%;
+    background: #fff;
+    display: inline-block;
+}
+
+
+button:hover {
+    background: #8C5256;
+}
+
+.text, a.text:hover, a.text:visited, a.text:link {
+    margin-left: 1em;
+    font-size: 1.3em;
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+.col-md-8 .main .column p {
+    margin-bottom: 0.5em;
+    border-bottom: 0.05em solid lightgrey;
+    height: 1.5em;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.main:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container {
+    margin: 3% auto 3% auto;
+    max-width: 1000px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    background: #8c393e;
+    left: 0;
+    bottom: 0;
+}
+
+.col-md-8 {
+    margin: 20px 0 12px 0;
+    display: block;
+}
+
+.legende {
+    color: grey;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    border-bottom: none;
+}
+
+.left_size {
+    text-align: left;
+}
+
+.right_size {
+    text-align: right;
+}
+
+.container form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .input-box {
+    margin-bottom: 15px;
+    width: 80%;
+}
+
+.input-box .details {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.input-box input, .input-box textarea {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+
+}
+
+.input-box input:focus,
+.input-box input:valid,
+.input-box textarea:focus,
+.input-box textarea:valid {
+    border-color: #8c393e;
+
+}
+
+form .button input, button {
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: #8c393e;
+}
+
+form .button input:hover {
+    background: #8C5256;
+}
+
+a:link, a:hover, a:visited {
+    color: #8c393e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #8C5256;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* HEADER */
+#logo_header {
+    width: 8%;
+    margin: 0.8em;
+}
+
+button.userPage {
+    position: relative;
+    float: right;
+    margin: 2%;
+    width: 11em;
+}
+
+.click a:link, .click a:hover, .click a:visited {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+#searchForm {
+    position: relative;
+    float: right;
+    margin: 2.2em auto;
+}
+
+div.inlineFlex {
+    display: inline-flex;
+    margin-bottom: 0;
+}
+
+a.search {
+    margin: 0.6em 0.5em 0.3em 0.5em;
+}
+
+/********************************************/
+
+/*FOOTER*/
+footer {
+    background: #8c393e;
+    align-items: center;
+    color: #ffffff;
+}
+
+#logo_insta {
+    width: 25px;
+}
+
+#logo_fb {
+    width: 25px;
+}
+
+footer .text {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.footer {
+    padding: 2em 12% 0.5em 12%;
+}
+
+.footer p {
+    border-bottom: none;
+}
+
+.footer .footerReseaux {
+    padding-bottom: 0.8em;
+    padding-left: 3em;
+}
+
+.footerReseaux a.text {
+    color: #ffffff;
+}
+
+.footer .titreFooter {
+    margin-left: 1em;
+}
+
+/*****************************/
+
+/* User Page */
+.click {
+    margin: 2% auto;
+}
+
+.mdp {
+    text-align: right;
+}
+
+.col-sm-offset-2 {
+    text-align: left;
+}
+
+svg.logoUser {
+    margin: 1em 0;
+    width: 50px;
+    height: 50px;
+}
+
+/***************************/
+
+/* Review Section */
+.input-box input.starsInput {
+    width: 1em;
+}
+
+section.cards {
+    margin: 3% auto 3% auto;
+    width: 90%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.col-md-8 .main .column p.legende {
+    color: grey;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    border-bottom: none;
+}
+
+.stars {
+    color: #8C5256;
+}
+
+.belowStars {
+    margin: 2em 0 0 0;
+}
+
+#addReview {
+    hidden: true;
+}
+
+/******************************/
+
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .container form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+
+/******* css des switch admin user à voir si ça fait tout buguer *****/
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #fcdabe;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #fcdabe;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.error {
+    color: #8c393e;
+    text-align: center;
+    font-size: 1.5em;
+}

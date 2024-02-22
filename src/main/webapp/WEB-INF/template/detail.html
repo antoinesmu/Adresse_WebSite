@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AdresseHEI</title>
+    <link href="css/detail.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <meta charset="UTF8_general_ci">
+</head>
+<body>
+<header th:replace="~{fragments::menu('liste')}"></header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="title" th:text="${establishment.name}">Au Vieux de la vielle</h3>
+            <p class="legende">Restaurant</p>
+            <div class="main">
+                <div class="columnTiers">
+                    <p class="left_size"> Style </p>
+                    <p class="left_size"> Adresse </p>
+                    <p class="left_size"> Catégorie de prix </p>
+                    <p class="left_size"> Le plus ? </p>
+                    <p class="left_size"> Téléphone </p>
+                    <p class="left_size"> Site web </p>
+                </div>
+                <div class="columnTiers">
+                    <p class="right_size" th:text="${establishment.specialty}">Spécialités du Nord</p>
+                    <p class="right_size" th:text="${establishment.address}">2 rue des Vieux Murs, 59000 Lille</p>
+                    <p class="right_size" th:text="${establishment.price}">Environ 15€ le plat</p>
+                    <p class="right_size" th:text="${establishment.moreInfo}">La carbonade</p>
+                    <p class="right_size" th:text="${establishment.phone}">+33 3 20 13 81 64</p>
+                    <p class="right_size" th:text="${establishment.website}"><a th:href="${establishment.website}">http://estaminetlille.fr/auvieuxdelavieille</a>
+                    </p>
+                </div>
+                <div class="info-container columnTiers">
+                    <div class="img-container">
+                        <img class="img-detail" th:src="${'images/'+establishment.image}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row line">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <a class="btn btn-default" href="liste">Retour à la liste</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 info-container">
+            <div class="carte-container">
+                <iframe class="carte" th:src="${establishment.carte}" width="200" height="200" style="border:0;"
+                        allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="button" id="editButtonContainer"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="title"> Espace commentaires</h3>
+            <div id="reviewContainer" class="main">
+                <!-- Commentaires ici -->
+            </div>
+        </div>
+    </div>
+    <div id="addButtonContainer" class="button">
+        <!-- Boutton Ajouter un commentaire ici -->
+    </div>
+    <script src="js/review.js" type="application/javascript"></script>
+    <div id="addReview" class="row" hidden="true">
+        <div class="col-md-8">
+            <h3 class="title">Ajouter un commentaire</h3>
+            <p class="legende">Merci de formuler un avis sur ce restaurant</p>
+            <form id="addReviewForm" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <div>
+                            <span class="details"> Titre du commentaire </span>
+                            <input type="text" name="titre" id="titreInput" placeholder="Saisir un titre">
+                        </div>
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <div>
+                            <span class="details"> Note </span>
+                        </div>
+                        <div>
+                            <input class="starsInput" width="1em" type="radio" id="5" name="stars" value="5" checked>
+                            <span th:replace="~{fragments::5stars}" id="5stars" class="stars"></span>
+                        </div>
+                        <div>
+                            <input class="starsInput" width="1em" type="radio" id="4" name="stars" value="4">
+                            <span th:replace="~{fragments::4stars}" id="4stars" class="stars"></span>
+                        </div>
+                        <div>
+                            <input class="starsInput" width="1em" type="radio" id="3" name="stars" value="3">
+                            <span th:replace="~{fragments::3stars}" id="3stars" class="stars"></span>
+                        </div>
+                        <div>
+                            <input class="starsInput" width="1em" type="radio" id="2" name="stars" value="2">
+                            <span th:replace="~{fragments::2stars}" id="2stars" class="stars"></span>
+                        </div>
+                        <div>
+                            <input class="starsInput" width="1em" type="radio" id="1" name="stars" value="1">
+                            <span th:replace="~{fragments::1stars}" id="1stars" class="stars"></span>
+                        </div>
+                        <div>
+                            <input class="starsInput" width="1em" type="radio" id="0" name="stars" value="0">
+                            <span th:replace="~{fragments::0stars}" id="0stars" class="stars"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Commentaire </span>
+                        <textarea rows="5" name="comment" id="comment"
+                                  placeholder="Que pensez vous de ce restaurant ?"></textarea>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <div class="button">
+                    <button id="addReviewValidBtn"> Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="~{fragments::footer('detail')}"></footer>
+</body>
+</html>

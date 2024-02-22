@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Restaurant</title>
+    <link href="../css/theme.css" rel="stylesheet">
+    <meta charset="UTF8_general_ci">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!--script src="../js/checkInputsRestaurant.js" type="application/javascript"></script-->
+<header th:replace="~{fragments::menu_admin}"></header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="title">Ajouter un nouveau restaurant</h3>
+            <p class="legende">Merci de remplir le formulaire</p>
+            <form method="post">
+                <div class="user-details">
+                    <div class="input-box popup">
+                        <span class="details"> Nom du restaurant </span>
+                        <input type="text" name="name" id="name" placeholder="Saisir le nom" required>
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box popup">
+                        <span class="details"> Specialite </span>
+                        <input type="text" name="specialty" id="specialty" placeholder="Saisir la spécialité" required>
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box popup">
+                        <span class="details"> Adresse </span>
+                        <input type="text" name="address" id="address" placeholder="Saisir l'adresse" required>
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box popup">
+                        <span class="details"> Numero de telephone </span>
+                        <input type="tel" name="phone" id="phone" placeholder="Saisir le téléphone">
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box popup">
+                        <span class="details"> Site internet </span>
+                        <input type="url" name="website" id="website" placeholder="Saisir le website">
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box popup">
+                        <span class="details"> Prix </span>
+                        <input type="number" name="price" id="price" placeholder="Saisir le prix" required>
+                        <span class="details">Euros</span>
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Informations supplémentaires </span>
+                        <textarea rows="5" name="moreInfo" id="moreInfo"
+                                  placeholder="Un petit plus ? C'est par ici"></textarea>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <div class="button">
+                    <button id="submit"> Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
